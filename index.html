@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سایت ارسال پیام ناشناس - به دوستانت پیام ناشناس بفرست">
+    <title>صفحه اصلی | سایت پیام ناشناس</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2><a href="index.html">📨 پیام ناشناس</a></h2>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                    <li><a href="auth/login.html">ورود</a></li>
+                    <li><a href="auth/register.html" class="btn-register">ثبت‌نام</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <main>
+        <!-- بخش قهرمان (Hero Section) -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>پیام‌های ناشناس بفرست و دریافت کن!</h1>
+                <p>با سایت ما، می‌تونی به هر کسی که می‌خوای پیام ناشناس بفرستی و نظراتت رو بدون ترس به اشتراک بذاری</p>
+                <div class="hero-buttons">
+                    <a href="auth/register.html" class="btn btn-primary">همین حالا شروع کن</a>
+                    <a href="about.html" class="btn btn-secondary">بیشتر بدانید</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-image.svg" alt="پیام ناشناس" onerror="this.style.display='none'">
+                <!-- اگر تصویر نبود، این متن نمایش داده میشه -->
+                <div class="image-placeholder">📱</div>
+            </div>
+        </section>
+
+        <!-- بخش ویژگی‌ها -->
+        <section class="features">
+            <h2>چرا سایت ما؟</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>کاملاً ناشناس</h3>
+                    <p>هیچکس نمی‌فهمد چه کسی پیام را فرستاده، حتی ما!</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>فیلتر هوشمند</h3>
+                    <p>با استفاده از هوش مصنوعی، پیام‌های نامناسب فیلتر می‌شوند</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📸</div>
+                    <h3>آپلود عکس</h3>
+                    <p>می‌تونی برای پروفایلت عکس بذاری</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>سرعت بالا</h3>
+                    <p>ارسال و دریافت پیام در کسری از ثانیه</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش چگونگی کارکرد -->
+        <section class="how-it-works">
+            <h2>چطور کار می‌کند؟</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">۱</div>
+                    <h3>ثبت‌نام کن</h3>
+                    <p>یک حساب کاربری بساز و پروفایل خودت رو تکمیل کن</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">۲</div>
+                    <h3>لینک دریافت کن</h3>
+                    <p>لینک اختصاصی خودت رو به دوستانت بده</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">۳</div>
+                    <h3>پیام دریافت کن</h3>
+                    <p>دوستانت می‌تونن به طور ناشناس برات پیام بفرستن</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش کاربران فعال -->
+        <section class="active-users">
+            <h2>کاربران فعال</h2>
+            <div class="users-grid" id="users-container">
+                <!-- این بخش با جاوااسکریپت پر میشه -->
+                <div class="loading">در حال بارگذاری...</div>
+            </div>
+        </section>
+
+        <!-- بخش نظرات کاربران -->
+        <section class="testimonials">
+            <h2>نظرات کاربران</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "خیلی از این سایت راضیم! تونستم بدون ترس به دوستم بگم چی فکر می‌کنم"
+                    </div>
+                    <div class="testimonial-author">علی رضایی</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "فیلتر هوشمندش عالیه، دیگه نگران پیام‌های نامناسب نیستم"
+                    </div>
+                    <div class="testimonial-author">سارا احمدی</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "راحت و سریع، هر روز دارم استفاده می‌کنم"
+                    </div>
+                    <div class="testimonial-author">محمد کریمی</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر سایت -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>درباره ما</h3>
+                <p>ما یک پلتفرم برای ارسال پیام‌های ناشناس هستیم که با استفاده از هوش مصنوعی، محیطی امن برای کاربران فراهم می‌کنیم.</p>
+            </div>
+            <div class="footer-section">
+                <h3>لینک‌های سریع</h3>
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                    <li><a href="terms.html">قوانین و مقررات</a></li>
+                    <li><a href="privacy.html">حریم خصوصی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> info@example.com</li>
+                    <li><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</li>
+                    <li><i class="fas fa-map-marker-alt"></i> تهران، ایران</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>شبکه‌های اجتماعی</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>تمامی حقوق برای سایت پیام ناشناس محفوظ است &copy; ۲۰۲۴</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
