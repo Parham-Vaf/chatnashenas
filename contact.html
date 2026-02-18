@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تماس با ما - ارتباط با تیم پشتیبانی پیام ناشناس">
+    <title>تماس با ما | سایت پیام ناشناس</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- هدر سایت -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2><a href="index.html">📨 پیام ناشناس</a></h2>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="contact.html" class="active">تماس با ما</a></li>
+                    <li><a href="auth/login.html">ورود</a></li>
+                    <li><a href="auth/register.html" class="btn-register">ثبت‌نام</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- بخش عنوان صفحه -->
+        <section class="page-header">
+            <div class="container">
+                <h1>تماس با ما</h1>
+                <p>راه‌های ارتباطی با تیم پشتیبانی</p>
+            </div>
+        </section>
+
+        <!-- بخش اطلاعات تماس -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>آدرس</h3>
+                        <p>تهران، خیابان ولیعصر، کوچه گلستان، پلاک ۱۲۳</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>تلفن</h3>
+                        <p>۰۲۱-۱۲۳۴۵۶۷۸</p>
+                        <p>۰۹۱۲-۳۴۵۶۷۸۹</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>ایمیل</h3>
+                        <p>info@example.com</p>
+                        <p>support@example.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>ساعات کاری</h3>
+                        <p>شنبه تا چهارشنبه: ۹ صبح تا ۵ عصر</p>
+                        <p>پنجشنبه: ۹ صبح تا ۱ ظهر</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش فرم تماس و نقشه -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-form-grid">
+                    <!-- فرم تماس -->
+                    <div class="contact-form">
+                        <h2>ارسال پیام به پشتیبانی</h2>
+                        <p>سوال، پیشنهاد یا انتقاد؟ خوشحال می‌شیم نظراتتون رو بشنویم</p>
+                        
+                        <form id="contactForm" onsubmit="return handleContactForm(event)">
+                            <div id="form-message" class="form-message" style="display: none;"></div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">نام و نام خانوادگی</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">ایمیل</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">موضوع</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">لطفاً یک موضوع انتخاب کنید</option>
+                                    <option value="support">پشتیبانی فنی</option>
+                                    <option value="suggestion">پیشنهاد</option>
+                                    <option value="complaint">شکایت</option>
+                                    <option value="collaboration">همکاری</option>
+                                    <option value="other">سایر</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">متن پیام</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+
+                            <div class="form-group file-attachment">
+                                <label for="attachment">ضمیمه (اختیاری)</label>
+                                <input type="file" id="attachment" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                                <small>حداکثر حجم: ۵ مگابایت</small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" id="submitBtn">ارسال پیام</button>
+                        </form>
+                    </div>
+
+                    <!-- نقشه و اطلاعات جانبی -->
+                    <div class="contact-sidebar">
+                        <!-- نقشه -->
+                        <div class="map-container">
+                            <h3>موقعیت ما روی نقشه</h3>
+                            <div class="map-placeholder">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.844627584147!2d51.38945731526076!3d35.68998078019022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e010f4b8f8b8b%3A0x8f8b8b8f8b8f8b8f!2sTehran%2C%20Iran!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+                                    width="100%" 
+                                    height="300" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <!-- سوالات متداول سریع -->
+                        <div class="quick-faq">
+                            <h3>سوالات متداول</h3>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>چطور می‌تونم پیام ناشناس بفرستم؟</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>وارد پروفایل کاربر مورد نظر شوید و روی دکمه "ارسال پیام ناشناس" کلیک کنید. نیازی به ثبت‌نام نیست!</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>آیا پیام‌ها واقعاً ناشناس می‌مانند؟</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>بله، ما هیچ اطلاعاتی از فرستنده ذخیره نمی‌کنیم و هویت افراد کاملاً ناشناس می‌ماند.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>چطور می‌تونم حساب کاربریم رو حذف کنم؟</span>
+                                    <i class="fas fa-chevron-down"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>وارد پروفایل خود شوید، به بخش تنظیمات بروید و گزینه حذف حساب را انتخاب کنید.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- شبکه‌های اجتماعی -->
+                        <div class="social-contact">
+                            <h3>در شبکه‌های اجتماعی</h3>
+                            <div class="social-grid">
+                                <a href="#" class="social-item instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>اینستاگرام</span>
+                                </a>
+                                <a href="#" class="social-item telegram">
+                                    <i class="fab fa-telegram"></i>
+                                    <span>تلگرام</span>
+                                </a>
+                                <a href="#" class="social-item twitter">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>توییتر</span>
+                                </a>
+                                <a href="#" class="social-item linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>لینکدین</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>درباره ما</h3>
+                <p>ما یک پلتفرم برای ارسال پیام‌های ناشناس هستیم که با استفاده از هوش مصنوعی، محیطی امن برای کاربران فراهم می‌کنیم.</p>
+            </div>
+            <div class="footer-section">
+                <h3>لینک‌های سریع</h3>
+                <ul>
+                    <li><a href="index.html">خانه</a></li>
+                    <li><a href="about.html">درباره ما</a></li>
+                    <li><a href="contact.html">تماس با ما</a></li>
+                    <li><a href="terms.html">قوانین و مقررات</a></li>
+                    <li><a href="privacy.html">حریم خصوصی</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تماس با ما</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> info@example.com</li>
+                    <li><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</li>
+                    <li><i class="fas fa-map-marker-alt"></i> تهران، ایران</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>شبکه‌های اجتماعی</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>تمامی حقوق برای سایت پیام ناشناس محفوظ است &copy; ۲۰۲۴</p>
+        </div>
+    </footer>
+
+    <style>
+        /* استایل‌های اختصاصی صفحه تماس با ما */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-info-section {
+            padding: 4rem 0;
+            background: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-card i {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .contact-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 2rem;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-form h2 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form > p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .file-attachment input[type="file"] {
+            padding: 0.5rem;
+            border: 2px dashed #e0e0e0;
+            background: #f8f9fa;
+        }
+
+        .file-attachment small {
+            display: block;
+            margin-top: 0.25rem;
+            color: #999;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .map-container {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .map-container h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .map-placeholder {
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .quick-faq {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .quick-faq h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .faq-item {
+            margin-bottom: 0.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1rem;
+            background: #f8f9fa;
+            border: none;
+            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: #333;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1rem;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .social-contact {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .social-contact h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .social-item {
+            padding: 0.75rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-item:hover {
+            opacity: 0.8;
+        }
+
+        .social-item.instagram {
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+        }
+
+        .social-item.telegram {
+            background: #0088cc;
+        }
+
+        .social-item.twitter {
+            background: #1da1f2;
+        }
+
+        .social-item.linkedin {
+            background: #0077b5;
+        }
+
+        /* responsive */
+        @media (max-width: 768px) {
+            .contact-form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script>
+        // مدیریت فرم تماس
+        function handleContactForm(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('form-message');
+            
+            // دریافت مقادیر فرم
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // اعتبارسنجی ساده
+            if (!name || !email || !subject || !message) {
+                showFormMessage('لطفاً تمام فیلدهای الزامی را پر کنید', 'error');
+                return false;
+            }
+            
+            // غیرفعال کردن دکمه
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'در حال ارسال...';
+            
+            // شبیه‌سازی ارسال به سرور
+            setTimeout(() => {
+                showFormMessage('پیام شما با موفقیت ارسال شد. به زودی با شما تماس می‌گیریم.', 'success');
+                document.getElementById('contactForm').reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'ارسال پیام';
+            }, 2000);
+            
+            return false;
+        }
+
+        function showFormMessage(message, type) {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.textContent = message;
+            messageDiv.className = `form-message ${type}`;
+            messageDiv.style.display = 'block';
+            
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        // سوالات متداول
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
